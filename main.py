@@ -5,8 +5,8 @@ plg = Bot(command_prefix=".")
 
 @plg.event
 async def on_ready():
-    print(bot.user.name)
-    print(bot.user.id)
+    print(plg.user.name)
+    print(plg.user.id)
 
 @plg.command()
 async def hello(*args):
