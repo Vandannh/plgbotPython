@@ -5,7 +5,7 @@ FAILS=0
 while true
 do
   sleep 0.5
-  ./main.py
+  python3 main.py
   EXIT=$?
   ((FAILS++))
 
