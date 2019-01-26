@@ -76,12 +76,12 @@ async def roll(*args):
         result = "Rolling dices: \n"
         for dice in diceResult:
             result += "D{}: {} \n".format(dices[1], dice)
-        
+
         result += "Sum: {}".format(sum(diceResult))
     else:
         diceResult.append(random.randint(1, int(dices[0])))
         result = "Rolling dice: \n"
-        result += "D{}: {} \n".format(diceResult[0])
+        result += "D{}: {} \n".format(dices[0], diceResult[0])
 
     print("Running command: roll")
     return await plg.say(result)
