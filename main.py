@@ -18,7 +18,7 @@ async def watch(*args):
 
     return await plg.say("https://www.watch2gether.com/rooms/forfunz-wfwuj0h0rho6v60fgk")
 
-@my_bot.command()
+@plg.command()
 async def rollstats(*args):
     stats = ""
 
@@ -37,9 +37,9 @@ async def rollstats(*args):
 
     stats = "Your stats: \n Strength: {str} \n Dexterity: {dex} \n Constitution: {con} \n Intelligence: {int} \n Wisdom: {wis} \n Charisma: {cha}".format(str=rollStats(), dex=rollStats(), con=rollStats(), int=rollStats(), wis=rollStats(), cha=rollStats())
     print("Running command: rollstats")
-    return await my_bot.say(stats)
+    return await plg.say(stats)
 
-@my_bot.command()
+@plg.command()
 async def uptime(*args):
     uptime_string = "Raspberry pi uptime:\n"
 
@@ -48,15 +48,15 @@ async def uptime(*args):
         uptime_string += str(timedelta(seconds = uptime_seconds))
 
     print("Running command: uptime")
-    return await my_bot.say(uptime_string)
+    return await plg.say(uptime_string)
 
-@my_bot.command()
+@plg.command()
 async def roll(*args):
     try:
         args[0].upper()
     except:
         print("Running command: roll")
-        return await my_bot.say("Roll dices by typing: !roll <numberOfDices>D<sizeOfDice>")
+        return await plg.say("Roll dices by typing: !roll <numberOfDices>D<sizeOfDice>")
 
 
     single = False
@@ -84,14 +84,14 @@ async def roll(*args):
 
     result += "Sum: {}".format(sum(diceResult))
     print("Running command: roll")
-    return await my_bot.say(result)
+    return await plg.say(result)
 
-@my_bot.command()
+@plg.command()
 async def pc(*args):
     print("Running command: pc")
-    return await my_bot.say("What the fuck did you just say about me, you sexist pig? I'll have you know I graduated top of my class in women's studies and have been involved in numerous false-flaggings against anti-feminist Youtube videos, and I have over 300 confirmed user bannings. I am trained in professional self-victimization and I have the top Patreon account in the entire feminist blogosphere. You are nothing to me but another blocked user. I will shut you the fuck up with feigned outrage the likes of which has never been seen before on Tumblr, mark my fucking tits. You think you can get away with saying that shit to me over the internet? Think again, shitlord. As we speak, I am contacting my secret network of progressive journalists whom I've fucked and your words are being taken out of context right now, so you better prepare for their white-knighting, bigot. The white-knighting that wipes out the pathetic little thing you call your reputation. You're fucking dead, fedora. I can doxx you anywhere, anytime, and I can check your privilege in over seven hundred ways, and that's just for your gender. Not only am I extensively trained in redefining words, but I have access to the entire database of the postmodern Marxist curriculum of my university and will use it to its full extent to wipe your mansplanation off the face of the internet, you little shit. If only you could have known what hysterical femtribution your “clever” comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn misogynist. I will menstruate fury all over you and you will drown in it. You're fucking over, neckbeard.")
+    return await plg.say("What the fuck did you just say about me, you sexist pig? I'll have you know I graduated top of my class in women's studies and have been involved in numerous false-flaggings against anti-feminist Youtube videos, and I have over 300 confirmed user bannings. I am trained in professional self-victimization and I have the top Patreon account in the entire feminist blogosphere. You are nothing to me but another blocked user. I will shut you the fuck up with feigned outrage the likes of which has never been seen before on Tumblr, mark my fucking tits. You think you can get away with saying that shit to me over the internet? Think again, shitlord. As we speak, I am contacting my secret network of progressive journalists whom I've fucked and your words are being taken out of context right now, so you better prepare for their white-knighting, bigot. The white-knighting that wipes out the pathetic little thing you call your reputation. You're fucking dead, fedora. I can doxx you anywhere, anytime, and I can check your privilege in over seven hundred ways, and that's just for your gender. Not only am I extensively trained in redefining words, but I have access to the entire database of the postmodern Marxist curriculum of my university and will use it to its full extent to wipe your mansplanation off the face of the internet, you little shit. If only you could have known what hysterical femtribution your “clever” comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn misogynist. I will menstruate fury all over you and you will drown in it. You're fucking over, neckbeard.")
 
-@my_bot.command()
+@plg.command()
 async def manythings(*args):
     deck = ["Balance \n Two of spades \n The character must change to a radically different alignment. If the character fails to act according to the new alignment, she gains a negative level.",
     "Comet \n Two of Diamonds \n The character must single-handedly defeat the next hostile monster or monsters encountered, or the benefit is lost. If successful, the character gains enough XP to attain the next experience level.",
@@ -118,7 +118,7 @@ async def manythings(*args):
 
     card = random.randint(0, 21)
 
-    return await my_bot.say(deck[card])
+    return await plg.say(deck[card])
 
 
 
