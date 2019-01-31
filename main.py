@@ -123,4 +123,4 @@ async def manythings(*args):
 
 
 
-plg.run("Mzc3NTEzMzE3Njk2MDEyMjkx.DOOCVw.TPzCZWONF_QBYB0VpYe23_1Gjlw")
+plg.run()

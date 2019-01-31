@@ -43,4 +43,4 @@ if __name__ == "__main__":
                 bot.load_extension(cog)
             except Exception as e:
                 print(f"{type(e).__name__} : {e}")
-    bot.run("NTM5MDYyODA3OTQ2MzMwMTEz.Dy9OzA.AcEq0vEgt3jzKK8HCJd4S1gmTds")
+    bot.run()
