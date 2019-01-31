@@ -1,5 +1,6 @@
 from discord.ext.commands import Bot
 import random
+import characters
 
 plg = Bot(command_prefix=".")
 
