@@ -1,5 +1,4 @@
 #!/bin/bash
-
 FAILS=0
 
 while true
