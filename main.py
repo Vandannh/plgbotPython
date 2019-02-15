@@ -1,6 +1,7 @@
 from discord.ext.commands import Bot
 import random
 import characters
+import config
 
 plg = Bot(command_prefix=".")
 
@@ -13,6 +14,11 @@ async def on_ready():
 async def hello(*args):
     print("Running command: hello")
     return await plg.say("Hello")
+
+@plg.command()
+async def invite(*args):
+    print("Running command: invite")
+    return await plg.say("discord.gg/9AEpU33")
 
 @plg.command()
 async def watch(*args):
@@ -123,4 +129,4 @@ async def manythings(*args):
 
 
 
-plg.run()
+plg.run(config.token)
