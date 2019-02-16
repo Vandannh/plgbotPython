@@ -1,7 +1,7 @@
 #!/usr/bin/python3.6
 from discord.ext import commands
 import datetime
-import MySQLdb
+import config
 
 class PlgBot(commands.Bot):
     def __init__(self, *args, **kwargs):
@@ -19,28 +19,16 @@ class PlgBot(commands.Bot):
 
         await self.invoke(ctx)
 
-    async def on_command_error(self, ctx, exc):
-        e = getattr(exc, 'original', exc)
-        if isinstance(e, (commands.CommandOnCooldown, discord.Forbidden)):
-            print(str(e))
-        elif isinstance(e, (commands.MissingRequiredArgument, commands.BadArgument)):
-            await ctx.invoke(bot.get_command('help'), ctx.command.name)
-            print(str(e))
-        else:
-            tb = ''.join(traceback.format_exception(type(e), e, e.__traceback__))
-            print(tb)
-
-
 startup_ext = [
     "ext.plg",
 ]
 
-bot = PlgBot(command_prefix="$")
+bot = PlgBot(command_prefix=".")
 
 if __name__ == "__main__":
-    for cog in startup_cogs:
+    for cog in startup_ext:
             try:
                 bot.load_extension(cog)
             except Exception as e:
                 print(f"{type(e).__name__} : {e}")
-    bot.run()
+    bot.run(config.token)
