@@ -99,7 +99,7 @@ class Plg:
     async def pc(self, ctx):
         print("Running command: pc")
         print("Running command: pc")
-        return await ctx.send("```" + config.pc + "```")
+        return await ctx.send(config.pc)
 
     @commands.command()
     async def manythings(self, ctx):
