@@ -21,6 +21,8 @@ class PlgBot(commands.Bot):
 
 startup_ext = [
     "ext.plg",
+    "ext.reddit",
+    "ext.runescape",
 ]
 
 bot = PlgBot(command_prefix=".")
