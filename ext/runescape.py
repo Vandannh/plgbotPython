@@ -20,13 +20,18 @@ class Reddit:
 
 
         url = ("https://apps.runescape.com/runemetrics/profile/profile?user=" + username + "&activities=20")
-        res = get_jsonparsed_data(url)
+        data = get_jsonparsed_data(url)
 
+        res = """
+{}
+Totalskill: {}
+Total experience: {}
+Combat level: {}
+Quests completed: {}
 
+""".format(data.get("name"), data.get("totalskill"), data.get("totalxp"), data.get("combatlevel"), data.get("questscomplete"))
 
-        print(res.get("totalskill"))
-
-        return await ctx.send(res.get("totalskill"))
+        return await ctx.send(res)
 
 def setup(bot):
     bot.add_cog(Reddit(bot))
