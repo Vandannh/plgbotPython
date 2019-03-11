@@ -30,6 +30,8 @@ T-Series:
 Difference:
 {}""".format(int(subspew), int(substs), abs(int(subspew) - int(substs)))
 
+        return await ctx.send(res)
+
     @commands.command()
     async def runescape(self, ctx, username: str):
         print("Running command: runescape")
