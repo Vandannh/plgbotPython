@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python
 from discord.ext import commands
 import datetime
 import config
