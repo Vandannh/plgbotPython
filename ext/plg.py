@@ -53,47 +53,47 @@ class Plg:
 
         with open("/proc/uptime", "r") as f:
             uptime_seconds = float(f.readline().split()[0])
-            uptime_string += str(timedelta(seconds = uptime_seconds))
+            uptime_string += str(datetime.timedelta(seconds = uptime_seconds))
 
         print("Running command: uptime")
         return await ctx.send(uptime_string)
 
-    @commands.command()
-    async def roll(self, ctx):
-        print("Running command: roll")
-        try:
-            args[0].upper()
-        except:
-            print("Running command: roll")
-            return await ctx.send("Roll dices by typing: !roll <numberOfDices>D<sizeOfDice>")
+    # @commands.command()
+    # async def roll(self, ctx):
+    #     print("Running command: roll")
+    #     try:
+    #         args[0].upper()
+    #     except:
+    #         print("Running command: roll")
+    #         return await ctx.send("Roll dices by typing: !roll <numberOfDices>D<sizeOfDice>")
 
-        single = False
-        diceInput = args[0].upper()
-        diceResult = []
-        dices = diceInput.split("D")
+    #     single = False
+    #     diceInput = args[0].upper()
+    #     diceResult = []
+    #     dices = diceInput.split("D")
 
-        if len(dices) < 2:
-            single = True
+    #     if len(dices) < 2:
+    #         single = True
 
-        i = 0
-        if(single == False):
+    #     i = 0
+    #     if(single == False):
 
-            while i < int(dices[0]):
-                diceResult.append(random.randint(1, int(dices[1])))
-                i += 1
+    #         while i < int(dices[0]):
+    #             diceResult.append(random.randint(1, int(dices[1])))
+    #             i += 1
 
-            result = "Rolling dices: \n"
-            for dice in diceResult:
-                result += "D{}: {} \n".format(dices[1], dice)
+    #         result = "Rolling dices: \n"
+    #         for dice in diceResult:
+    #             result += "D{}: {} \n".format(dices[1], dice)
 
-            result += "Sum: {}".format(sum(diceResult))
-        else:
-            diceResult.append(random.randint(1, int(dices[0])))
-            result = "Rolling dice: \n"
-            result += "D{}: {} \n".format(dices[0], diceResult[0])
+    #         result += "Sum: {}".format(sum(diceResult))
+    #     else:
+    #         diceResult.append(random.randint(1, int(dices[0])))
+    #         result = "Rolling dice: \n"
+    #         result += "D{}: {} \n".format(dices[0], diceResult[0])
 
-        print("Running command: roll")
-        return await ctx.send(result)
+    #     print("Running command: roll")
+    #     return await ctx.send(result)
 
     @commands.command()
     async def pc(self, ctx):
