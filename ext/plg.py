@@ -100,5 +100,10 @@ class Plg:
 
         return await ctx.send(config.deck[card])
 
+    @commands.command()
+    async def ptsd(self, ctx):
+        print("Running command: ptsd")
+        return await ctx.send(config.ptsd[random.randint(0,(len(config.ptsd)-1))])
+
 def setup(bot):
     bot.add_cog(Plg(bot))
